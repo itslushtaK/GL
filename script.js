@@ -47,4 +47,21 @@ for (var i = 0; i < navLinks.length; i++) {
     menuBtn.style.pointerEvents = "auto";
   });
 }
+const showMoreButton = document.getElementById('show-more');
+const showLessButton = document.getElementById('show-less');
+const hiddenPhotos = document.getElementById('hidden-photos');
+
+showMoreButton.addEventListener('click', function() {
+  hiddenPhotos.style.display = 'block';
+  showMoreButton.style.display = 'none';
+  showLessButton.style.display = 'block';
+});
+
+showLessButton.addEventListener('click', function() {
+  hiddenPhotos.style.display = 'none';
+  showMoreButton.style.display = 'block';
+  showLessButton.style.display = 'none';
+});
+
+
 
