@@ -133,7 +133,7 @@ nav.sticky .menu-btn{
   background-attachment: fixed;
 }
 
-#show-more ,#show-less{
+#showMoreBtn{
   display: block;
   margin: 0 auto;
   padding: 10px 20px;
@@ -619,3 +619,40 @@ footer .text span a:hover{
 .next {
   right: 10px;
 }
+/* Add your CSS styles here for responsiveness and slideshow design */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.image-wrapper {
+  margin-bottom: 30px;
+}
+
+.image-wrapper h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Add CSS for responsive design */
+@media screen and (max-width: 768px) {
+  .slide img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+

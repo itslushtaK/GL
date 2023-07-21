@@ -47,48 +47,21 @@ for (var i = 0; i < navLinks.length; i++) {
     menuBtn.style.pointerEvents = "auto";
   });
 }
-const showMoreButton = document.getElementById('show-more');
-const showLessButton = document.getElementById('show-less');
-const hiddenPhotos = document.getElementById('hidden-photos');
+function toggleHiddenPhotos() {
+  const hiddenPhotosSection = document.querySelector(".hidden-photos");
+  const showMoreBtn = document.getElementById("showMoreBtn");
 
-showMoreButton.addEventListener('click', function() {
-  hiddenPhotos.style.display = 'block';
-  showMoreButton.style.display = 'none';
-  showLessButton.style.display = 'block';
-});
-
-showLessButton.addEventListener('click', function() {
-  hiddenPhotos.style.display = 'none';
-  showMoreButton.style.display = 'block';
-  showLessButton.style.display = 'none';
-});
-
-
-
-let slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  const slides = document.getElementsByClassName("slide");
-
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  if (hiddenPhotosSection.style.display === "none" || hiddenPhotosSection.style.display === "") {
+    hiddenPhotosSection.style.display = "block";
+    showMoreBtn.textContent = "Show Less";
+  } else {
+    hiddenPhotosSection.style.display = "none";
+    showMoreBtn.textContent = "Show More";
   }
-
-  slideIndex++;
-
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 3000); 
 }
 
-function changeSlide(n) {
-  slideIndex += n;
-  showSlides();
-}
-
+// Add click event listener to the "Show More" button
+const showMoreBtn = document.getElementById("showMoreBtn");
+showMoreBtn.addEventListener("click", toggleHiddenPhotos);
 
 
